@@ -140,7 +140,7 @@ export const products = [
         image: [p_img4],
         category: "Men",
         subCategory: "Topwear",
-        sizes: ["S", "M", "XXL"],
+        sizes: ["S", "M", "L", "XXL"],
         date: 1716621345448,
         bestseller: true
     },

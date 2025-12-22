@@ -13,6 +13,10 @@ a.active hr{
   font-weight: 400;
   font-style: normal;
 }
+      /* For hiding the scroll bar arrows  */
+  ::-webkit-scrollbar {  
+    display: none;
+  }
 @media(max-width : 640px){
      a.active{
       background-color: black;
