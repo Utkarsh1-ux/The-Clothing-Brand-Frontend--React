@@ -164,7 +164,7 @@ export const products = [
         image: [p_img6],
         category: "Kids",
         subCategory: "Topwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S","M", "L", "XL"],
         date: 1716623423448,
         bestseller: true
     },
