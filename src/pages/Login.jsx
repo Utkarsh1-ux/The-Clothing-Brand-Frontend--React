@@ -26,7 +26,7 @@ const Login = () => {
             : <p onClick={()=>setCurrentState('Login')} className='cursor-pointer'>Login here</p>
           }
        </div>
-       <button className='bg-orange-900 text-white font-light px-8 py-2 mt-4'>{currentState==='Login'?'Sign In' : 'Sign Up'}</button>
+       <button className='bg-blue-950 text-white font-light px-8 py-2 mt-4'>{currentState==='Login'?'Sign In' : 'Sign Up'}</button>
     </form>
   )
 }

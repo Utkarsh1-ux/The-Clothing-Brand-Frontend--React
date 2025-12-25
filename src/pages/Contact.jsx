@@ -17,7 +17,7 @@ const Contact = () => {
             <p className='text-gray-500'>Tel : (321) 666-891 <br /> Email:The@clothing.com</p>
             <p className='font-semibold text-xl text-gray-600'>Carrers at Forever</p>
               <p className='text-gray-500'>We’re always looking for passionate, creative people to grow with us. If fashion inspires you and teamwork excites you, The Clothing is the place to build your career.</p>
-            <button className='border border-black px-8 py-4 text-sm hover:bg-orange-900 hover:text-white transition-all duration-500'>Explores Opportunities</button>
+            <button className='border border-black px-8 py-4 text-sm hover:bg-blue-950 hover:text-white transition-all duration-500'>Explores Opportunities</button>
         </div>
        </div>
        <NewsLetterBox/> 
