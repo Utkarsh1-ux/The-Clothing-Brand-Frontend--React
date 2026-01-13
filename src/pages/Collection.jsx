@@ -68,7 +68,7 @@ const Collection = () => {
 
     useEffect(()=>{
      applyFilter();
-    },[category , subCategory,search,showSearch]);
+    },[category , subCategory,search,showSearch,products]);
 
   //  for price high to low or etc like that
     useEffect(()=>{
