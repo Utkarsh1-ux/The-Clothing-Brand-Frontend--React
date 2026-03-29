@@ -17,12 +17,13 @@ const Verify = () => {
             if (!token) {
                 return null;
             }
-
-            const response = await axios.post(backendUrl + "/api/order/verifyStripe" ,{success , orderId} , {Headers : {token}})
+            const response = await axios.post(backendUrl + "/api/order/verifyStripe" ,{success , orderId} , {headers : {token}})
             if (response.data.success) {
                 setCartItems({})
                 navigate('/orders')
             }else{
+                console.log("backend errror" , response.data.message);
+                
                 navigate("/cart")
             }
          } catch (error) {
