@@ -1,6 +1,7 @@
-import React from 'react'
-import {Routes,Route} from 'react-router-dom'
+import React, { useContext } from 'react'
+import {Routes,Route, Navigate} from 'react-router-dom'
 import NavBar from './components/NavBar'
+import { ShopContext } from './context/ShopContext'
 import Home from './pages/Home'
 import Collection from './pages/Collection'
 import About from './pages/About'
@@ -17,6 +18,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import Verify from './pages/Verify'
 
 const App = () => {
+  const { token } = useContext(ShopContext);
+
   return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
       {/* using toast container we can use toast notification in our project */}
@@ -24,7 +27,7 @@ const App = () => {
       <NavBar/>
       <SearchBar/>
       <Routes>
-        <Route path='/' element ={<Home/>} />
+        <Route path='/' element ={token ? <Home/> : <Navigate to='/login' />} />
         <Route path='/collection' element ={<Collection/>} />
         <Route path='/about' element ={<About/>} />
         <Route path='/contact' element ={<Contact/>} />

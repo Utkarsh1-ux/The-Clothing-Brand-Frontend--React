@@ -5,17 +5,12 @@ import { ShopContext } from '../context/ShopContext.jsx';
 
 const NavBar = () => {
   const [visible, setVisible] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [theme]);
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+  }, []);
 
   const{setShowSearch ,getCartCount , navigate , token , setToken , setCartItems} = useContext(ShopContext);
 
@@ -54,9 +49,6 @@ const NavBar = () => {
        </ul>
 
        <div className='flex items-center gap-6'>
-             <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} className="text-xl cursor-pointer">
-                 {theme === 'light' ? '🌙' : '☀️'}
-             </button>
              <img onClick={()=>setShowSearch(true)} src={assets.search_icon} className='w-5 cursor-pointer ' />
 
              <div className='group relative'>
