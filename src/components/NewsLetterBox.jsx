@@ -7,7 +7,7 @@ const NewsLetterBox = () => {
     }
   return (
     <div className='text-center'>
-        <p className='text-2xl font-medium text-gray-800'>Subscribe and get 10% off</p>
+        <p className='text-2xl font-medium text-gray-800 dark:text-gray-100'>Subscribe and get 10% off</p>
        <p className='text-gray-400 mt-3'>
        Don’t miss out! Get news, updates, and tips delivered straight to your inbox.
        </p>

@@ -29,7 +29,7 @@ const NavBar = () => {
     <div className='flex items-center justify-between py-5 font-medium'>
          <Link to={'/'}><img src={assets.logo} className='w-36' /> </Link>
        
-       <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>
+       <ul className='hidden sm:flex gap-5 text-sm text-gray-700 dark:text-gray-200'>
          {/* creating tags */}
 
            <NavLink to='/' className= "flex flex-col items-center gap-1 ">
@@ -65,10 +65,10 @@ const NavBar = () => {
           {/* DropDown Men */}
            {token &&    
        <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
-              <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded'>
-                <p className='cursor-pointer hover:text-black'>My Profile</p>
-                <p onClick={()=>navigate('/orders')} className='cursor-pointer hover:text-black'>Orders</p>
-                <p onClick={logout} className='cursor-pointer hover:text-black'>Logout</p>
+              <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 dark:bg-zinc-900 text-gray-500 dark:text-gray-400 rounded'>
+                <p className='cursor-pointer hover:text-black dark:text-white'>My Profile</p>
+                <p onClick={()=>navigate('/orders')} className='cursor-pointer hover:text-black dark:text-white'>Orders</p>
+                <p onClick={logout} className='cursor-pointer hover:text-black dark:text-white'>Logout</p>
               </div>
                </div>}
              </div>
@@ -81,8 +81,8 @@ const NavBar = () => {
           </div>
 
           {/* Sidebar menu for small screens  */}
-          <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? "w-full" : 'w-0'}`}>
-             <div className='flex flex-col text-gray-600'>
+          <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white dark:bg-black transition-all ${visible ? "w-full" : 'w-0'}`}>
+             <div className='flex flex-col text-gray-600 dark:text-gray-300'>
                   <div onClick={()=>setVisible(false)} className='flex items-center gap-4 p-3 cursor-pointer'>
                        <img src={assets.dropdown_icon} className='h-4 rotate-180' alt="" />
                        <p>Back</p>

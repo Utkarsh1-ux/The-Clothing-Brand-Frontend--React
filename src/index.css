@@ -5,6 +5,8 @@ a.active hr{
     display:block;
 }
 
+@custom-variant dark (&:is(.dark *));
+
 *{
     font-family: Outfit;
 }
@@ -16,10 +18,9 @@ body {
 }
 
 html.dark body {
-    background-color: #111827; /* Tailwind gray-900 */
+    background-color: black;
     color: white;
 }
-
 .prata-regular {
   font-family: "Prata", serif;
   font-weight: 400;

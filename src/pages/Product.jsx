@@ -59,19 +59,19 @@ const Product = () => {
              <p className='pl-2'>(122)</p>
             </div>
             <p className='mt-5 text-3xl font-medium'>{currency}{productData.price}</p>
-            <p className='mt-5 text-gray-500 md:w-4/5'>{productData.description}</p>
+            <p className='mt-5 text-gray-500 dark:text-gray-400 md:w-4/5'>{productData.description}</p>
             <div className='flex flex-col gap-4 my-8'>
              <p>Select Size</p>
              <div className='flex gap-2'>
                {productData.sizes.map((item, index)=>(
                 //  curly braces for classname used for dyanamic styling
-                 <button onClick={()=>setSize(item)} className={`border px-4 py-2 bg-gray-100 cursor-pointer ${item===size ? 'border-orange-500': ''}`} key={index}>{item}</button>
+                 <button onClick={()=>setSize(item)} className={`border px-4 py-2 bg-gray-100 dark:bg-zinc-900 cursor-pointer ${item===size ? 'border-orange-500': ''}`} key={index}>{item}</button>
                ))} 
              </div>
             </div>
             <button onClick={()=>addToCart(productData._id,size)} className='bg-blue-950 text-white px-8 py-3 text-sm active:bg-gray-700 cursor-pointer'>ADD TO CART</button>
             <hr className='mt-8 sm:w-4/5' />
-            <div className='text-sm text-gray-500 mt-5 flex flex-cols gap-1'>
+            <div className='text-sm text-gray-500 dark:text-gray-400 mt-5 flex flex-cols gap-1'>
             <p>100% Original product.</p>
             <p>Cash on delivery is available.</p>
             <p>Easy return and exchange policy within 7 days.</p>
@@ -86,7 +86,7 @@ const Product = () => {
 
              </div>
       </div>
-      <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500'>
+      <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500 dark:text-gray-400'>
        <p>An e-commerce website is an online platform that facilitates the buying and selling of goods and services over the internet, providing a seamless shopping experience for consumers.</p>
       <p>An e-commerce website serves as a digital storefront where businesses and customers engage in the buying and selling of goods and services over the internet.An e-commerce website serves as a digital storefront where businesses can showcase their products or services, allowing customers to browse, select, and purchase items online. This type of website is essential for modern businesses, enabling them to reach a broader audience and operate 24/7 without the limitations of a physical store.</p>
       </div>
