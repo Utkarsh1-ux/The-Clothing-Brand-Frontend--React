@@ -70,7 +70,7 @@ const Product = () => {
              </div>
             </div>
             <div className='flex gap-4'>
-              <button onClick={()=>addToCart(productData._id,size)} className='bg-blue-950 text-white px-8 py-3 text-sm active:bg-gray-700 cursor-pointer'>ADD TO CART</button>
+              <button onClick={()=>{addToCart(productData._id,size); navigate('/cart');}} className='bg-blue-950 text-white px-8 py-3 text-sm active:bg-gray-700 cursor-pointer'>ADD TO CART</button>
               <button onClick={()=>{addToCart(productData._id,size); navigate('/place-order');}} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700 cursor-pointer'>BUY NOW</button>
             </div>
             <hr className='mt-8 sm:w-4/5' />
