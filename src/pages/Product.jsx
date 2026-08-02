@@ -7,7 +7,7 @@ import RelatedProduct from '../components/RelatedProduct';
 const Product = () => {
 
   const {productId} = useParams();
-    const {products , currency ,addToCart} = useContext(ShopContext); // getting product data from Shop context  
+    const {products , currency ,addToCart, navigate} = useContext(ShopContext); // getting product data from Shop context  
   const [productData , setProductData] = useState(false);
   const [image , setImage] = useState('')
   const[size , setSize] = useState('')
@@ -69,7 +69,10 @@ const Product = () => {
                ))} 
              </div>
             </div>
-            <button onClick={()=>addToCart(productData._id,size)} className='bg-blue-950 text-white px-8 py-3 text-sm active:bg-gray-700 cursor-pointer'>ADD TO CART</button>
+            <div className='flex gap-4'>
+              <button onClick={()=>addToCart(productData._id,size)} className='bg-blue-950 text-white px-8 py-3 text-sm active:bg-gray-700 cursor-pointer'>ADD TO CART</button>
+              <button onClick={()=>{addToCart(productData._id,size); navigate('/place-order');}} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700 cursor-pointer'>BUY NOW</button>
+            </div>
             <hr className='mt-8 sm:w-4/5' />
             <div className='text-sm text-gray-500 dark:text-gray-400 mt-5 flex flex-cols gap-1'>
             <p>100% Original product.</p>

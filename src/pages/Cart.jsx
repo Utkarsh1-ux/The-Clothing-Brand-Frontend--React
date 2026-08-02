@@ -38,7 +38,7 @@ const Cart = () => {
         cartData.map((item ,index)=>{
           const productData = products.find((product)=>product._id===item._id);
           return(
-            <div key={index}  className='py-4 border-t border-b text-gray-700 dark:text-gray-200 grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4 '>
+            <div key={index}  className='py-4 border-t border-b text-gray-700 dark:text-gray-200 grid grid-cols-[4fr_auto_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4 '>
           <div className='flex items-center gap-6'>
            <img className='w-16 sm:w-20' src={productData.image[0]} alt="" />
          {/* info of added item in cart */}
@@ -51,7 +51,17 @@ const Cart = () => {
          </div>
         </div>
         {/* onchange feature for updating cart when we increase number using input field */}
-        <input onChange={(e)=>e.target.value === '' || e.target.value === '0' ? null  : updateQuantity(item._id,item.size, Number(e.target.value))} className='border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1' type="number" min={1} defaultValue={item.quantity} />
+        <div className='flex items-center gap-2'>
+          <button onClick={() => item.quantity > 1 ? updateQuantity(item._id, item.size, item.quantity - 1) : null} className='w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center border bg-gray-100 hover:bg-gray-200'>-</button>
+          <input 
+            onChange={(e)=>e.target.value === '' || e.target.value === '0' ? null  : updateQuantity(item._id,item.size, Number(e.target.value))} 
+            className='border w-10 sm:w-16 text-center px-1 sm:px-2 py-1' 
+            type="number" 
+            min={1} 
+            value={item.quantity} 
+          />
+          <button onClick={() => updateQuantity(item._id, item.size, item.quantity + 1)} className='w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center border bg-gray-100 hover:bg-gray-200'>+</button>
+        </div>
         <img onClick={()=>updateQuantity(item._id ,item.size ,0)} className='w-4 mr-4 sm:w-5 cursor-pointer' src={assets.bin_icon} alt="" />
       </div>
           )
