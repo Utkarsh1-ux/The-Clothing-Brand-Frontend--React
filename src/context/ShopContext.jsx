@@ -150,9 +150,9 @@ const ShopContextProvider = (props)=>{
       },[])
 
       useEffect(()=>{
-       if (!token && localStorage.getItem('token')) {
-        setToken(localStorage.getItem('token'))
-        getUserCart( localStorage.getItem('token'))
+       if (!token && sessionStorage.getItem('token')) {
+        setToken(sessionStorage.getItem('token'))
+        getUserCart( sessionStorage.getItem('token'))
        }
       },[])
 
