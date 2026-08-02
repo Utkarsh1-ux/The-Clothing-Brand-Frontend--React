@@ -46,3 +46,15 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+@layer base {
+  button {
+    @apply rounded-md shadow-md transition-all duration-200;
+  }
+  button:hover {
+    @apply shadow-lg -translate-y-[1px];
+  }
+  button:active {
+    @apply shadow-sm translate-y-0;
+  }
+}
