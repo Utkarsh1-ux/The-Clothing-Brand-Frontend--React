@@ -6,6 +6,7 @@ import { ShopContext } from '../context/ShopContext.jsx';
 const NavBar = () => {
   const [visible, setVisible] = useState(false);
   const [theme, setTheme] = useState('light');
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.remove('dark');
@@ -51,16 +52,16 @@ const NavBar = () => {
        <div className='flex items-center gap-6'>
              <img onClick={()=>setShowSearch(true)} src={assets.search_icon} className='w-5 cursor-pointer ' />
 
-             <div className='group relative'>
+             <div className='relative'>
               {/* now profile icon ke andr */}
-          <img onClick={()=>token ? null : navigate('/login')} className='w-5 cursor-pointer' src={assets.profile_icon}/> 
+          <img onClick={()=>token ? setDropdownOpen(!dropdownOpen) : navigate('/login')} className='w-5 cursor-pointer' src={assets.profile_icon}/> 
           {/* DropDown Men */}
-           {token &&    
-       <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
-              <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 dark:bg-zinc-900 text-gray-500 dark:text-gray-400 rounded'>
+           {token && dropdownOpen &&
+       <div className='absolute dropdown-menu right-0 pt-4 z-10'>
+              <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 dark:bg-zinc-900 text-gray-500 dark:text-gray-400 rounded shadow-md'>
                 <p className='cursor-pointer hover:text-black dark:text-white'>My Profile</p>
-                <p onClick={()=>navigate('/orders')} className='cursor-pointer hover:text-black dark:text-white'>Orders</p>
-                <p onClick={logout} className='cursor-pointer hover:text-black dark:text-white'>Logout</p>
+                <p onClick={()=>{navigate('/orders'); setDropdownOpen(false);}} className='cursor-pointer hover:text-black dark:text-white'>Orders</p>
+                <p onClick={()=>{logout(); setDropdownOpen(false);}} className='cursor-pointer hover:text-black dark:text-white'>Logout</p>
               </div>
                </div>}
              </div>
