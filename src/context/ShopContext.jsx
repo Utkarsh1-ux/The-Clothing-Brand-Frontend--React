@@ -150,6 +150,11 @@ const ShopContextProvider = (props)=>{
       },[])
 
       useEffect(()=>{
+       // Cleanup legacy token from previous version
+       if (localStorage.getItem('token')) {
+         localStorage.removeItem('token');
+       }
+
        if (!token && sessionStorage.getItem('token')) {
         setToken(sessionStorage.getItem('token'))
         getUserCart( sessionStorage.getItem('token'))
