@@ -1,10 +1,21 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import {assets} from '../assets/assets.js'
 import { Link, NavLink } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext.jsx';
 
 const NavBar = () => {
   const [visible, setVisible] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [theme]);
 
   const{setShowSearch ,getCartCount , navigate , token , setToken , setCartItems} = useContext(ShopContext);
 
@@ -43,6 +54,9 @@ const NavBar = () => {
        </ul>
 
        <div className='flex items-center gap-6'>
+             <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} className="text-xl cursor-pointer">
+                 {theme === 'light' ? '🌙' : '☀️'}
+             </button>
              <img onClick={()=>setShowSearch(true)} src={assets.search_icon} className='w-5 cursor-pointer ' />
 
              <div className='group relative'>

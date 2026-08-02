@@ -8,6 +8,18 @@ a.active hr{
 *{
     font-family: Outfit;
 }
+
+body {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+html.dark body {
+    background-color: #111827; /* Tailwind gray-900 */
+    color: white;
+}
+
 .prata-regular {
   font-family: "Prata", serif;
   font-weight: 400;
