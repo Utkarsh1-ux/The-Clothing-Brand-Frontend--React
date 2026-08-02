@@ -31,7 +31,7 @@ const About = () => {
             <b>Convenience:</b>
             <p className='text-gray-600'>Our platform is designed with convenience in mind. Easy navigation, quick access to features, and a user-friendly interface ensure you get things done effortlessly, anytime and anywhere.</p>
           </div>
-          <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
+          <div className='border px-10 md:px-15 py-8 sm:py-20 flex flex-col gap-5'>
             <b>Exceptional Customer Service:</b>
             <p className='text-gray-600'>We are dedicated to providing exceptional customer service at every step. Our support team is responsive, knowledgeable, and always ready to assist you, ensuring a smooth and satisfying experience.</p>
           </div>
