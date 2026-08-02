@@ -49,12 +49,12 @@ input[type="number"] {
 
 @layer base {
   button {
-    @apply rounded-md shadow-md transition-all duration-200;
+    @apply rounded-md shadow-lg transition-all duration-200;
   }
   button:hover {
-    @apply shadow-lg -translate-y-[1px];
+    @apply shadow-xl -translate-y-[2px];
   }
   button:active {
-    @apply shadow-sm translate-y-0;
+    @apply shadow-md translate-y-0;
   }
 }

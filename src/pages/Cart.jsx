@@ -50,9 +50,8 @@ const Cart = () => {
             </div>
          </div>
         </div>
-        {/* onchange feature for updating cart when we increase number using input field */}
         <div className='flex items-center gap-2'>
-          <button onClick={() => item.quantity > 1 ? updateQuantity(item._id, item.size, item.quantity - 1) : null} className='w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center border bg-gray-100 hover:bg-gray-200'>-</button>
+          <button onClick={() => item.quantity > 1 ? updateQuantity(item._id, item.size, item.quantity - 1) : null} className='w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center border bg-gray-100 hover:bg-gray-200 !shadow-none !translate-y-0 !rounded-sm'>-</button>
           <input 
             onChange={(e)=>e.target.value === '' || e.target.value === '0' ? null  : updateQuantity(item._id,item.size, Number(e.target.value))} 
             className='border w-10 sm:w-16 text-center px-1 sm:px-2 py-1' 
@@ -60,7 +59,7 @@ const Cart = () => {
             min={1} 
             value={item.quantity} 
           />
-          <button onClick={() => updateQuantity(item._id, item.size, item.quantity + 1)} className='w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center border bg-gray-100 hover:bg-gray-200'>+</button>
+          <button onClick={() => updateQuantity(item._id, item.size, item.quantity + 1)} className='w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center border bg-gray-100 hover:bg-gray-200 !shadow-none !translate-y-0 !rounded-sm'>+</button>
         </div>
         <img onClick={()=>updateQuantity(item._id ,item.size ,0)} className='w-4 mr-4 sm:w-5 cursor-pointer' src={assets.bin_icon} alt="" />
       </div>
